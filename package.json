@@ -1,0 +1,17 @@
+{
+  "name": "socket.io-fiddle",
+  "version": "0.0.1",
+  "description": "A simple chat client using socket.io",
+  "author": "Damien Arrachequesne",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.6.0",
+    "express": "4.13.4",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2"
+  },
+  "scripts": {
+    "start": "DEBUG=socket.io-fiddle node server.js",
+    "client": "DEBUG=socket.io-fiddle node client.js"
+  }
+}
