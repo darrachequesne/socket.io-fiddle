@@ -1,0 +1,16 @@
+{
+  "name": "socket.io-fiddle",
+  "version": "0.0.1",
+  "description": "Simple fiddle for socket.io",
+  "author": "Damien Arrachequesne",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.13.4",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js"
+  }
+}
