@@ -12,24 +12,10 @@ server.listen(port, function () {
 
 app.use(express.static(__dirname + '/public'));
 
-io.on('connect', function (socket) {
-  var socketId = socket.id;
-  debug('connection: %s', socketId);
 
-  function onHi(data){
-    debug('message "hi" %j', data);
-  }
+const device = io.of('/device');
+const portal = io.of('/portal');
 
-  function sendBuffer(){
-    socket.emit('hello', 1, '2', { 3: [], 4: new Buffer([0x01, 0x02, 0x03, 0x04]) });
-  }
-
-  function onDisconnect(){
-    debug('disconnect: %s', socketId);
-  }
-
-  socket.on('hi', onHi);
-  setInterval(sendBuffer, 5000);
-  socket.on('disconnect', onDisconnect);
-
+device.on('connection', function(socket) {
+   console.log('Connection made');
 });
