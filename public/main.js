@@ -8,6 +8,9 @@
 
   function onConnect(){
     console.log('connect ' + socket.id);
+
+    socket.emit('someEvent');
+    socket.emit('someEvent');
   }
 
 })();
