@@ -13,5 +13,10 @@ server.listen(port, () => console.log('server listening on port ' + port));
 function onConnect(socket){
   console.log('connect ' + socket.id);
 
+  io.emit('message', 1);
+  socket.emit('message', 2);
+
+  setTimeout(() => { socket.emit('message', 3); }, 200);
+
   socket.on('disconnect', () => console.log('disconnect ' + socket.id));
 }

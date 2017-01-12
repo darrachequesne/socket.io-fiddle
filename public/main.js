@@ -10,4 +10,8 @@
     console.log('connect ' + socket.id);
   }
 
+  socket.on('message', function (n) {
+    console.log('got ' + n);
+  })
+
 })();
