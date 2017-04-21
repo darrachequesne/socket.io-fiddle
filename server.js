@@ -13,5 +13,9 @@ server.listen(port, () => console.log('server listening on port ' + port));
 function onConnect(socket){
   console.log('connect ' + socket.id);
 
+  socket.join('john@doe.com', function () {
+    io.emit('john@doe.com', 'you won €€€ $$$ £££ !');
+  });
+
   socket.on('disconnect', () => console.log('disconnect ' + socket.id));
 }
