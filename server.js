@@ -15,3 +15,7 @@ function onConnect(socket){
 
   socket.on('disconnect', () => console.log('disconnect ' + socket.id));
 }
+
+io.of('printers').on('connection', function (socket) {
+  console.log('query:', socket.handshake.query);
+});
