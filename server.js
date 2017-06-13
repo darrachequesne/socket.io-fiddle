@@ -13,5 +13,11 @@ server.listen(port, () => console.log('server listening on port ' + port));
 function onConnect(socket){
   console.log('connect ' + socket.id);
 
+  socket.on('join', function(data) {
+    socket.join(data.ch);
+  });
+
   socket.on('disconnect', () => console.log('disconnect ' + socket.id));
 }
+
+setInterval(() => io.in('event#180').emit('newMessage', new Date()), 5000);
