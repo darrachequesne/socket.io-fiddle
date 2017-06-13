@@ -7,6 +7,18 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
+const session = require('express-session');
+
+const sessionMiddleware = session({
+  secret: 'MYSECRET',
+  resave: false,
+  saveUninitialized: true
+});
+
+io.use(function (socket, next) {
+  sessionMiddleware(socket.request, socket.request.res, next);
+});
+
 io.on('connect', onConnect);
 server.listen(port, () => console.log('server listening on port ' + port));
 
