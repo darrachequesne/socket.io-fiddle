@@ -13,7 +13,7 @@ And point your browser to `http://localhost:3000`. Optionally, specify
 a port by supplying the `PORT` env variable.
 
 NOTE: SSL/TLS (startssl) defaults the port to 3001. Open browser to 
-'https://localhost:3001'. You will have to accept the self-signed warning 
+`https://localhost:3001`. You will have to accept the self-signed warning 
 if used. Older versions of node are known to have issues. This is a way 
 to test your version of node.
 
