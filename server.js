@@ -13,5 +13,7 @@ server.listen(port, () => console.log('server listening on port ' + port));
 function onConnect(socket){
   console.log('connect ' + socket.id);
 
+  socket.on('data', (d) => console.log(d));
+
   socket.on('disconnect', () => console.log('disconnect ' + socket.id));
 }
