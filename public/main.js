@@ -2,7 +2,17 @@
 
 (function() {
 
-  var socket = io();
+  const options = {
+    transportOptions: {
+      polling: {
+        extraHeaders: {
+          Authorization: "Bearer test"
+        }
+      }
+    }
+  };
+
+  var socket = io('http://localhost:3000', options);
 
   socket.on('connect', onConnect);
 

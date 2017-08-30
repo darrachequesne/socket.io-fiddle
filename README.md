@@ -4,8 +4,8 @@
 ```
 $ npm install
 $ npm start # run the server
-$ npm run client # run the nodejs client
+$ PORT=3001 node server # run the server on port 3001 to simulate CORS
 ```
 
-And point your browser to `http://localhost:3000`. Optionally, specify
+And point your browser to `http://localhost:3001`. Optionally, specify
 a port by supplying the `PORT` env variable.
