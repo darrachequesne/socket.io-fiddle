@@ -11,7 +11,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "client": "node client.js",
-      "startssl": "node server-ssl.js"
+    "serverssl": "node server-ssl.js",
+    "clientssl": "node client-ssl.js",
+    "server": "node server.js",
+    "client": "node client.js"
   }
 }
