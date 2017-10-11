@@ -7,11 +7,19 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
-io.on('connect', onConnect);
 server.listen(port, () => console.log('server listening on port ' + port));
 
-function onConnect(socket){
-  console.log('connect ' + socket.id);
+io.use((socket, next) => {
+   console.log('(default) middleware running...');
+   next();
+}).on('connection', socket => {
+  console.log('(default) client connected');
+});
 
-  socket.on('disconnect', () => console.log('disconnect ' + socket.id));
-}
+// Following works, but client does not receive 'connect' or 'connection':
+io.of('/admin').use((socket, next) => {
+   console.log('(admin) middleware running...');
+   next();
+}).on('connection', socket => {
+  console.log('(admin) client connected');
+});
