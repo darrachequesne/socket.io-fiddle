@@ -6,8 +6,10 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.13.4",
+    "moment": "^2.20.1",
     "socket.io": "latest",
-    "socket.io-client": "latest"
+    "socket.io-client": "latest",
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "start": "node server.js",
